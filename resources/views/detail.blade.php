@@ -1,17 +1,13 @@
 @extends('partial.master')
+@section('title', 'Table siswa')
+@section('judul', 'Table siswa')
+@section('sub', "Detail siswa $siswa->nama_siswa")
 @push('css')
 <link href="{{ asset('/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 @endpush
 @section('content')
-    @if (session('berhasil'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session('berhasil') }}
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        @endif
-<div class="card shadow mb-4">
+<div class="container-fluid">
+    <div class="card shadow mb-4">
     <div class="card-header py-3">
         <div class="row mt-2">
             <div class="col-md-2">
@@ -48,6 +44,7 @@
             </table>
         </div>
     </div>
+</div>
 </div>
 @endsection
 @push('js')

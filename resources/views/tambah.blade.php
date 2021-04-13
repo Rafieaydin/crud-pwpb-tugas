@@ -1,11 +1,14 @@
 @extends('partial.master')
+@section('title', 'Table siswa')
+@section('judul', 'Table siswa')
+@section('sub', 'Tambah Data siswa')
 @section('content')
 <div class="container-fluid">
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
+        {{-- <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Tambah Data Siswa</h6>
-        </div>
+        </div> --}}
         <div class="card-body">
             <form action="{{ route('siswa.store') }}" method="POST">
                 @csrf

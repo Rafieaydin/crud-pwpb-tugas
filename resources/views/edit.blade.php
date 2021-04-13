@@ -1,11 +1,11 @@
 @extends('partial.master')
+@section('title', 'Table siswa')
+@section('judul', 'Table siswa')
+@section('sub', "Edit Siswa $siswa->nama_siswa")
 @section('content')
 <div class="container-fluid">
     <!-- DataTales Example -->
     <div class="card shadow mb-4">
-        <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary">Edit Data Siswa</h6>
-        </div>
         <div class="card-body">
             <form action="{{ route('siswa.update',['siswa' => $siswa->id]) }}" method="POST">
                 @method('put')
