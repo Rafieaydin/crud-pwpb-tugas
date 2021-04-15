@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\DB;
+use Faker\Factory as Faker;
 
 class SiswaSeeder extends Seeder
 {
@@ -15,13 +15,14 @@ class SiswaSeeder extends Seeder
      */
     public function run()
     {
+        $faker = Faker::create('id_ID');
         for ($i=1; $i <= 20 ; $i++) {
             DB::table('siswa')->insert([
-                'nipd' => Str::random(12),
-                'nama_siswa' => "Dana $i",
-                'jenis_kelamin' => 'L',
-                'kelas' => 'X',
-                'alamat' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Inventore aspernatur non sunt!'
+                'nipd' => "192010020$i",
+                'nama_siswa' => $faker->name,
+                'jenis_kelamin' => $faker->randomElement($array = array('P', 'L')),
+                'kelas' => $faker->randomElement($array = array('X', 'XI', 'XII')),
+                'alamat' => $faker->address
             ]);
         }
     }

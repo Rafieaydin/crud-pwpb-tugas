@@ -73,7 +73,7 @@ class SiswaController extends Controller
     public function update(SiswaRequest $request, Siswa $siswa)
     {
         $request->validated();
-        Siswa::where('id', $siswa->id)->update($request->except(['_token', '_method']));
+        $siswa->update($request->except(['_token', '_method']));
         return redirect()->route('siswa.index')->with('berhasil', 'data berhasil di update');
     }
 
